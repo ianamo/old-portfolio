@@ -1,0 +1,53 @@
+body {
+
+	width: 75%;
+	padding-left: 100px;
+}
+
+h1{
+	border: 3px;
+	border-style: groove;
+	border-color: red;
+	text-align: center;
+	letter-spacing: 5px;
+	font-family: sans-serif;
+}
+
+hr {
+	color: red;
+    border: none;
+    border-top: 3px double red;
+    overflow: visible;
+    text-align: center;
+    height: 5px;
+    width: 50%;
+}
+
+hr:after {
+    background: #fff;
+    content: ' ☙❦❧';
+    padding: 0 4px;
+    position: relative;
+    top: -13px;
+}
+
+
+p{
+	text-indent: 13px;
+	line-height: 25px;
+	font-size: large;
+	letter-spacing: 2px;
+	font-family: serif;
+	text-align: justify;
+}
+
+.init{
+	text-indent: 0px;
+}
+
+.init:first-letter {
+	font-size: xx-large;
+	color: red;
+	text-shadow: 1px 1px 2px;
+	padding: 5px;
+}
