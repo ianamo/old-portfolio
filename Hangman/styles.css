@@ -1,0 +1,93 @@
+body {
+	margin: 0;
+	background-color: #1C82AD;
+}
+
+.title {
+	text-align: center;
+	font-size: 4rem;
+	font-family: 'Rowdies' cursive;
+	font-style: italic;
+}
+
+/*Game Box*/
+
+.gamebox {
+	position: relative;
+	margin: 0 auto;
+	border-radius: 25px;
+	width: 60%;
+	height: 300px;
+	background-color: darkgrey;
+	border: solid black 6px;
+}
+
+.clue {
+	letter-spacing: 15px;
+	position: relative;
+	top: 42%;
+	margin: 0;
+	text-align: center;
+	font-size: 3rem;
+	font-family: monospace;
+	
+}
+
+.clue-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	border-right: dashed #13005A 2px;
+	display: inline-block;
+}
+
+.img-container {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 47%;
+	margin: 0;
+	padding: 70px 0;
+}
+
+.drawing {
+	border: double #13005A 3px;
+	position: relative;
+	left: 28%;
+	width: 150px;
+	text-align: center;
+}
+
+/*Keyboard*/
+
+.keyboard {
+	border: solid black 6px;
+	padding: 45px;
+	text-align: center;
+	width: 54%;
+	margin: 0 auto;
+	/*background-color: #13005A;*/
+	background-image: url('images/woodgrain.jpg');
+	border-radius: 25px;
+}
+
+.keybutton {
+	color: white;
+	background-color: #13005A; /* 800337C; */
+	margin: 0 8px;
+	width: 50px;
+	font-size: 2rem;
+	font-family: serif;
+	padding: 7px;
+	border-radius: 100%;
+}
+
+.keyrow {
+	margin: 15px;
+}
+
+button:disabled {
+	opacity: 0.5;
+}
