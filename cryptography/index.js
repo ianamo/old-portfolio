@@ -16,32 +16,52 @@ function getIndex (c, str) {
 	return false;
 }
 
-function encodeRot13 (char) {
-	index = getIndex(char,alpha);
-	index += 13;
-	if (index >25) {
-		index -= 26;
+function encodeRot13 (str) {
+	crypText = []
+	for (i=0;i<str.length;i++){
+		index = getIndex(str[i],alpha);
+		index += 13;
+		if (index >25) {
+			index -= 26;
+		}
+		crypText.push(alpha[index]);
 	}
-	return alpha[index];
+	return crypText.join("");
 }
 
-function decodeRot13 (char){
-	index = getIndex(char,alpha);
-	index -= 13;
-	if (index <0) {
-		index += 26;
+function decodeRot13 (str){
+	crypText = []
+	for (var i=0;i<str.length;i++){
+		index = getIndex(str[i],alpha);
+		index -= 13;
+		if (index <0) {
+			index += 26;
+		}
+		crypText.push(alpha[index]);
 	}
-	return alpha[index];
+	return crypText.join("");
 }
 
-function toAlpha(str) { // strip everything but letters
+function toAlphaUpcase(str) { // strip everything but letters, turn letters upper case
 	var output = [];
-	for (i=0;i<str.length;i++) {
+	for (var i=0;i<str.length;i++) {
 		if (alpha.includes(str[i].toUpperCase())) {
-			output.push(str[i]);
+			output.push(str[i].toUpperCase());
 		}
 	}
 	return output.join("");
+}
+
+function addSpace (str, n){ // adds a space at intervals of n
+	var newText = [];
+	for (var i =0; i<str.length;i++) {
+		newText.push(str[i]);
+		if ((i+1)%n==0){
+			newText.push(" ");
+		}
+	}
+	return newText.join("");
+
 }
 
 // website interface
@@ -49,8 +69,14 @@ function toAlpha(str) { // strip everything but letters
 $('.decode-toggle').click(function() {
 	decode = !decode;
 	spacing = 0; // reset count
-	$('.display-text').text("CRYPTO TEXT...");
-	this.classList.toggle("toggle-press");
+	var str = $('.display-text').text();
+	if (decode == false) {
+		$('.display-text').text(addSpace(encodeRot13(toAlphaUpcase(str)),5));
+	} else {
+		$('.display-text').text(addSpace(decodeRot13(toAlphaUpcase(str)),5));
+	}
+	//this.classList.toggle("toggle-press");
+	$('.label').toggleClass("toggle-press");
 })
 
 $(".letter-button").click(function () {
@@ -90,23 +116,51 @@ $(".copy").click(function() {
 
 $(".paste").click(function() {
 	spacing=0;
-	var text = toAlpha(prompt("Text to be encoded/decoded: "));
-	$('.display-text').text("");
-	if (decode == false){
-		for (var i =0;i<text.length;i++){
-			$('.display-text').append(encodeRot13(text[i].toUpperCase()));
-			if ((i+1)%5==0){
-				$('.display-text').append(" ");
-			}
-		}
-	} else {
-		for (var i =0;i<text.length;i++){
-			$('.display-text').append(decodeRot13(text[i].toUpperCase()));
-			if ((i+1)%5==0){
-				$('.display-text').append(" ");
-			}
-		}
+	if (decode==false){
+		var text = prompt("Enter text to be encoded/decoded...")
+		text = encodeRot13(toAlphaUpcase(text));
+		$('.display-text').text(addSpace(text,5));
+	}
+	else {
+		var text = prompt("Enter text to be encoded/decoded...")
+		text = encodeRot13(toAlphaUpcase(text));
+		$('.display-text').text(addSpace(text,5));
 	}
 
+});
+
+$(".clr-btn").click(function() {$('.display-text').text(""); spacing=0;});
+
+$(document).keydown(function (event) {
+	if (alpha.includes(event.key.toUpperCase())) {
+		var myKey = event.key;
+		myKey = myKey.toUpperCase();
+		$("#"+myKey).toggleClass('toggle-press');
+		setTimeout(() => {$('#'+myKey).toggleClass('toggle-press');},"100");
+		if (decode==false){
+			if (spacing ==0) {
+				$(".display-text").text(encodeRot13(myKey));
+				spacing++;
+			} else {
+				$(".display-text").append(encodeRot13(myKey));
+				spacing++;
+				if (spacing%5==0) {
+					$(".display-text").append(" ");
+				}
+			}
+		} else {
+			if (spacing ==0) {
+				$(".display-text").text(decodeRot13(myKey));
+				spacing++;
+			} else {
+				$(".display-text").append(decodeRot13(myKey));
+				spacing++;
+				if (spacing%5==0) {
+					$(".display-text").append(" ");
+				}
+			}
+
+		}
+	}
 });
 
