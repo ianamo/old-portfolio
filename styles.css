@@ -1,0 +1,259 @@
+a {
+	color: inherit;
+	display: contents;
+	text-decoration: none;
+}
+
+body {
+	font-family: 'Kanit', sans-serif;
+	margin: 0;
+	background-color: black;
+}
+
+h1 {
+	font-size: 3.5rem;
+	text-align: center;
+	padding: 4% 3%;
+	line-height: 1.5;
+}
+
+h2, h3 {
+	text-align: center;
+}
+
+
+h3 {
+	font-size: 1.5rem;
+}
+
+hr {
+	width: 7%;
+	border: 4px inset #C69749;
+	border-radius: 55px;
+	margin: 3% auto;
+}
+
+p {
+	font-family: 'Alegreya';
+	font-size: 19px;
+}
+
+/* Sidebar */
+
+#sidebar {
+	padding: 2% 3%;
+	text-align: center;
+	color: whitesmoke;
+	width: 15%;
+	margin-left: 3%;
+	margin-top: 2%;
+	background-color: #282A3A;
+	float: left;
+	border-radius: 55px;
+	border: inset #C69749 4px;
+}
+
+.link-column {
+	list-style: none;
+	padding: 6%;
+	margin: 0;
+	line-height: 2.5;
+}
+
+.link-column a:hover {
+	text-shadow: #C69749 1px 0 10px;
+}
+
+.link-column li {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.pic-container {
+	margin: auto;
+	width: 100%;
+}
+
+.profile-pic {
+	border-radius: 100%;
+	border: double #C69749 1px;
+	max-width: 100%;
+}
+
+.my-name {
+	font-size: 24px;
+}
+
+.what-i-am {
+	font-family: 'Press Start 2P';
+	font-size: 12px;
+	padding-bottom: 15px;
+}
+
+/* Main Container */
+
+.container {
+	color: whitesmoke;
+	background-color: black;
+	padding: 0 5%;
+	width: 62%;
+	float: left;
+}
+
+.container-box {
+	margin: 1% auto;
+	padding: 5%;
+}
+
+.section-title {
+	font-family: 'Press Start 2P';
+	font-size: 18px;
+	padding-bottom: 15px;
+}
+
+/*Title*/ 
+
+#title {
+	border-radius: 55px;
+	border: inset #C69749 4px;
+	width: 100%;
+	color: white;
+	margin-top: 4%;
+	margin-bottom: 14%;
+	background-image: url('./images/workshop.jpg');
+	background-position: center;
+	background-size: cover;
+}
+
+.text-container {
+	background-color: #282A3A;
+	opacity: 0.75;
+	height: 100%;
+	border-radius: 55px;
+}
+
+.title-text {
+	font-family: 'Kanit';
+	font-size: 59px;
+	margin: auto;
+	width: 52%;
+}
+
+/*Skills*/
+
+.skills-list {
+	max-width: 100%;
+	padding: 0;
+	list-style: none;
+	line-height: 3;
+	margin: 0;
+}
+
+.skills-list li {
+	text-align: center;
+}
+
+.icon-skill {
+	line-height: 0;
+	margin: auto;
+	border-radius: 100%;
+	width: 65px;
+	border: dashed #C69749 3px;
+}
+
+.progress-bar {
+	margin: auto;
+	margin-bottom: 25px;
+	width: 150px;
+	max-width: 90%;
+	height: 25px;
+	border: solid whitesmoke 1px;
+}
+
+.progress-half {
+	width: 50%;
+	height: 100%;
+	background-color: #C69749;
+	margin: 0;
+	padding: 0;
+}
+
+.progress-three-qtr {
+	width: 65%;
+	height: 100%;
+	background-color: #C69749;
+	margin: 0;
+	padding: 0;
+}
+
+.social-icon {
+	width: 35px;
+	display: inline-block;
+	padding: 15px;
+}
+
+.social-icon:hover {
+	filter: invert(50%);
+}
+
+/*About Me*/
+
+.profile-text {
+	width: 75%;
+	margin: auto;
+	font-size: 21px;
+	line-height: 1.5;
+}
+
+/*Projects*/
+
+.projects-div {
+	display: flex;
+	justify-content: center;
+	margin: auto;
+}
+
+.project-container {
+	padding: 5%;
+	width: 20%;
+	margin: 15px 20px;
+	display: inline-block;
+	border: inset #C69749 4px;
+	background-color: #282A3A;
+	border-radius: 55px;
+}
+
+@media screen and (max-width: 964px) {
+	.projects-div { flex-direction: column; }
+	.project-container { width: 45%; margin: 25px auto; }
+	.title-text {font-size: 30px;}
+}
+
+.project-container:hover {
+	border-color: whitesmoke;
+}
+
+.project-container h3 {
+	max-width: 100%;
+}
+
+.project-container p {
+	max-width: 100%;
+}
+
+.in-progress {
+	opacity: 0.75;
+	border-color: slategray;
+}
+
+.in-progress:hover {
+	border-color: slategray;
+}
+
+/*Footer*/
+
+footer {
+	color: whitesmoke;
+	padding: 8%;
+	text-align: center;
+}
