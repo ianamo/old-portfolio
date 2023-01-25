@@ -8,6 +8,8 @@ p {
 }
 
 .title {
+	margin-top: 29px;
+	line-height: 0.5;
 	text-align: center;
 	font-size: 4rem;
 	font-family: 'Rowdies', cursive;
@@ -17,6 +19,7 @@ p {
 /*Game Box*/
 
 .game-grid {
+	margin: 2%;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: 1fr 1fr;
@@ -34,6 +37,7 @@ p {
 }
 
 .clue {
+	line-height: 5.5;
 	letter-spacing: 15px;
 	text-align: center;
 	font-size: 3rem;
@@ -45,53 +49,67 @@ p {
 	grid-column-start: 3;
 	grid-column-end: -1;
 	grid-row: 1;
-	width: 8%;
-	margin: 0;
-	padding: 70px 0;
+	
+	display: grid;
+	place-content: center;
 }
 
 .drawing {
-	border: double #13005A 3px;
-	width: 150px;
-	text-align: center;
+	border: double #13005A 18px;
+	border-radius: 22px;
+	width: 168px;
 }
 
 /*Keyboard*/
 
 .keyboard {
+/*How it fits into parent grid*/
 	grid-column-start: 1;
 	grid-column-end: -1;
 	grid-row: 2;
-	display: grid;
-	grid-template-columns: 1;
-	grid-template-rows: 1fr 1fr;
-	grid-gap: 3%;
 
+/*Our sub-grid*/
+	display: grid; 
+  	grid-template-columns: repeat(13, 1fr);
+  	grid-template-rows: 1fr 1fr;
+  	grid-gap: 5px;
+
+/*The styling of the keyboard itself*/
+	padding: 7%;
 	border: solid black 6px;
-	/*background-color: #13005A;*/
 	background-image: url('images/woodgrain.jpg');
 	background-position: center;
 	background-size: cover;
 	border-radius: 25px;
 }
 
-.keybutton {
+.key {
+	max-height: 50px;
 	color: white;
 	background-color: #13005A; /* 800337C; */
-	margin: 0 8px;
-	font-size: min(5vw, 2rem);
 	font-family: serif;
-	padding: 3px;
-	border-radius: 55px;
-	width: 40px;
+	text-align: center;
+	border: solid black 2px;
+	border-radius: 20px;
+	font-size: 2rem;
+	line-height: 1.5;
 }
 
-.keyrow {
-	display: flex;
-	justify-content: space-between;
-	margin: 1%;
+.key:hover {
+	cursor: pointer;
+	border-color: white;
 }
 
-button:disabled {
+.disabled {
 	opacity: 0.5;
+}
+
+.disabled:hover {
+	border-color: black;
+	cursor: inherit;
+}
+
+footer {
+	padding: 5%;
+	text-align: center;
 }
