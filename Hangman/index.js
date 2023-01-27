@@ -9,12 +9,12 @@ var wrong = 1;
 var gameOver = false;
 
 for (var i = 0; i<clueWord.length; i++) {
-	clueText.push("_");
+	clueText.push("_"); // generate the blanks for word
 }
 
 // Functions
 
-function checkLetter (char, wordArray) {
+function checkLetter (char, wordArray) { // return position(s) of letter in array
 	var positions = [];
 	for (var i=0;i<wordArray.length;i++) {
 		if (wordArray[i] == char) {
@@ -32,7 +32,7 @@ function updateClue(textArray) {
 
 updateClue(clueText);
 
-if (gameOver == false){
+if (gameOver == false){ // only listen for clicks if game is ongoing
 	$(".key").click(function () {
 		var letter = this.innerHTML;
 		if (!(guessedLetters.includes(letter))) {
