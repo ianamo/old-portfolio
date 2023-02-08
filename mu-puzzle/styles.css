@@ -1,0 +1,60 @@
+.mu-display {
+  margin: 2% auto;
+  width: 550px;
+  height: 200px;
+  border: inset #CFB997 12px;
+  background-color: #7B8FA1;
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 8fr 2fr;
+  grid-gap: 54px;
+  padding: 1%;
+  row-gap: 20px;
+}
+
+#mu-theorems {
+  grid-column-start: 1;
+  grid-column-end: -1;
+  row: 1;
+  border: inset #567189 4px;
+  padding: 3%;
+  background-color: whitesmoke;
+  font-family: monospace;
+  font-size: 1.5rem;
+}
+
+.button-row {
+  row: 2;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  display:grid;
+  border: inset black 4px;
+  border-radius: 21px;
+  place-content: center;
+  background-color: #FAD6A5;
+  font-family: monospace;
+  font-weight: bold;
+  width:19%;
+  padding:2%;
+  text-align:center;
+}
+
+.btn:hover {
+  border-color:white;
+}
+
+.btn-waiting {
+  border-color:white;
+}
+
+.highlight {
+  padding: 3px;
+  background-color: #FAD6A5;
+  border: dashed black 3px;
+}
