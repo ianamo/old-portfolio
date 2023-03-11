@@ -209,6 +209,7 @@ p {
 
 .projects-div {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	margin: auto;
 }
@@ -227,6 +228,9 @@ p {
 	.projects-div { flex-direction: column; }
 	.project-container { width: 45%; margin: 25px auto; }
 	.title-text {font-size: 30px;}
+	.icon-skill {width: 52px;}
+	.link-column a {font-size: 1rem;}
+	.my-name {font-size: 20px;}
 }
 
 .project-container:hover {
